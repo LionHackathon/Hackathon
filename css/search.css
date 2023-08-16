@@ -4,7 +4,9 @@
     font-weight: normal;
 }
 
-
+body {
+    background-color: whitesmoke;
+}
 #search_page{
     text-align: center;
     font-family: 'Cafe24Ssurround';
@@ -12,4 +14,13 @@
 
 .result{
     color: #0021CD;
+    font-size: 50px;
+}
+
+.youtube img{
+    border-radius: 30px;
+}
+
+input{
+    height: 70px;
 }

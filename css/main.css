@@ -4,7 +4,9 @@
     font-weight: normal;
 }
 
-
+body {
+  background-color: whitesmoke;
+}
 
 #main{
     text-align: center;
@@ -16,6 +18,9 @@
     font-size: 80px;
 }
 
+#searchinput{
+  height: 80px;
+}
 
 .buttons {
     display: flex;

@@ -15,8 +15,8 @@
         <section id="main" class="mx-auto mt-5 py-5 px-5">
         <h1 class="mt-5 mb-5 main_name"> 서비스 명 </h1>
         <div class="input-group mb-5 main_search">
-            <input type="text" class="form-control" placeholder="검색어 입력" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button type="button" class="btn btn-primary"><i class="fas fa-search"></i> </button>
+            <input type="text" id="searchinput" class="form-control" placeholder="검색어 입력" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="navigateToPage()" type="button" class="btn btn-primary"><i class="fas fa-search"></i> </button>
         </div>
         <div class="buttons mb-5">
             <button type="button" class="btn btn-outline-primary qna"><img src="./img/qna.png" alt="qna"></button>
@@ -25,6 +25,7 @@
         </div>
         <button type="button" class="btn btn-outline-primary mt-5 top_ten">인기검색어</button>
     </section>
+    <script src="./js/search.js"></script>
 </div>
 
 </body>
