@@ -49,39 +49,39 @@ def signin_view(request):
             return JsonResponse({'message': 'Signin successful'})
         else:
             return JsonResponse({'message': 'Invalid credentials'}, status=400)
-        
+
+      
 class KakaoLoginView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
+        # 카카오 로그인 페이지 URI로 리다이렉트
         client_id = settings.KAKAO_CONFIG['KAKAO_REST_API_KEY']
         redirect_uri = settings.KAKAO_CONFIG['KAKAO_REDIRECT_URI']
         kakao_login_uri = settings.KAKAO_CONFIG['kakao_login_uri']
-
         uri = f"{kakao_login_uri}?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code"
-        
-        res = redirect(uri)
-        return res
-
-
+        return redirect(uri)
+    
 
 class KakaoCallbackView(APIView):
     permission_classes = (AllowAny,)
 
-    def get(self, request):
-        '''
-        kakao access_token 요청 및 user_info 요청
-        '''
-        kakao_token_uri = settings.KAKAO_CONFIG['kakao_token_uri']
+    def get_kakao_user_info(self, access_token):
         kakao_profile_uri = settings.KAKAO_CONFIG['kakao_profile_uri']
-        data = request.query_params.copy()
+        headers = {
+            "Authorization": f"Bearer {access_token}",
+            "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        }
+        response = requests.get(kakao_profile_uri, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return None
 
-
-        # access_token 발급 요청
-        code = data.get('code')
-        if not code:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-
+    def get(self, request):
+        # 코드로 액세스 토큰 받기
+        code = request.GET.get('code')
+        kakao_token_uri = settings.KAKAO_CONFIG['kakao_token_uri']
         request_data = {
             'grant_type': 'authorization_code',
             'client_id': settings.KAKAO_CONFIG['KAKAO_REST_API_KEY'],
@@ -89,50 +89,23 @@ class KakaoCallbackView(APIView):
             'client_secret': settings.KAKAO_CONFIG['KAKAO_CLIENT_SECRET_KEY'],
             'code': code,
         }
-        token_headers = {
-            'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-        }
-        token_res = requests.post(kakao_token_uri, data=request_data, headers=token_headers)
-
+        token_res = requests.post(kakao_token_uri, data=request_data)
         token_json = token_res.json()
         access_token = token_json.get('access_token')
 
-        if not access_token:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        access_token = f"Bearer {access_token}"  # 'Bearer ' 마지막 띄어쓰기 필수
+        # 액세스 토큰으로 사용자 정보 받기
+        user_info = self.get_kakao_user_info(access_token)
+        if not user_info:
+            return Response({"message": "Failed to get user info from Kakao."}, status=400)
 
-        # kakao 회원정보 요청
-        auth_headers = {
-            "Authorization": access_token,
-            "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
-        }
-        user_info_res = requests.get(kakao_profile_uri, headers=auth_headers)
-        user_info_json = user_info_res.json()
-
-        social_type = 'kakao'
-        social_id = f"{social_type}_{user_info_json.get('id')}"
-
-        kakao_account = user_info_json.get('kakao_account')
-        if not kakao_account:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        user_email = kakao_account.get('email')
-
-        # 시스템 내 사용자 확인 및 로그인/등록 처리
+        # 사용자 정보로 로그인 또는 회원가입 처리
+        user_email = user_info['kakao_account'].get('email')
         try:
             user = User.objects.get(email=user_email)
-            login(request, user)  # 해당 사용자로 로그인 처리
+            login(request, user)
         except User.DoesNotExist:
-            # 새로운 사용자 생성
             user = User.objects.create_user(username=user_email, email=user_email)
             user.save()
-            login(request, user)  # 새로 생성한 사용자로 로그인 처리
+            login(request, user)
 
-        # 테스트 값 확인용
-        res = {
-            'social_type': social_type,
-            'social_id': social_id,
-            'user_email': user_email,
-        }
-        response = Response(status=status.HTTP_200_OK)
-        response.data = res
-        return response
+        return Response({"message": "Success", "user_info": user_info})
