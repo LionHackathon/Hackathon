@@ -54,9 +54,6 @@ class KakaoLoginView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
-        '''
-        kakao code 요청
-        '''
         client_id = settings.KAKAO_CONFIG['KAKAO_REST_API_KEY']
         redirect_uri = settings.KAKAO_CONFIG['KAKAO_REDIRECT_URI']
         kakao_login_uri = settings.KAKAO_CONFIG['kakao_login_uri']
@@ -75,10 +72,10 @@ class KakaoCallbackView(APIView):
         '''
         kakao access_token 요청 및 user_info 요청
         '''
+        kakao_token_uri = settings.KAKAO_CONFIG['kakao_token_uri']
+        kakao_profile_uri = settings.KAKAO_CONFIG['kakao_profile_uri']
         data = request.query_params.copy()
 
-        kakao_token_uri = settings.kakao_token_uri
-        kakao_profile_uri = settings.kakao_profile_uri
 
         # access_token 발급 요청
         code = data.get('code')
