@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import logging
 from user.models import User
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
 
 
 logger = logging.getLogger(__name__)
@@ -35,12 +37,9 @@ def signin_view(request):
         user_id = data.get('userId')
         password = data.get('password')
 
-        # 이곳에서 실제 로그인 로직을 구현하세요
         user = authenticate(request, username=user_id, password=password)
         if user is not None:
             login(request, user)
-            response_data = {'message': 'Signin successful'}
+            return JsonResponse({'message': 'Signin successful'})
         else:
-            response_data = {'message': 'Invalid credentials'}
-            
-        return JsonResponse(response_data)
+            return JsonResponse({'message': 'Invalid credentials'}, status=400)
