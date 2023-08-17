@@ -26,7 +26,6 @@ body {
     display: flex;
     border: none;
     background: none;
-    gap: 180px;
     justify-content: center; 
     align-items: center;
   }
@@ -46,5 +45,26 @@ body {
    background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+}
+
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.button-item {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.button-text {
+  margin-top: 10px;
 }
 

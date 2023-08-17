@@ -5,7 +5,7 @@ const pageMapping = {
 };
 
 function handleKeyPress(event) {
-    if (event.keyCode === 13) { // 엔터 키의 keyCode는 13
+    if (event.keyCode === 13) { 
         navigateToPage();
     }
 }
@@ -28,3 +28,23 @@ function navigateToPage() {
     }
 }
 document.getElementById('searchinput').addEventListener('keydown', handleKeyPress);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleHeartButtons = document.querySelectorAll(".toggleheart");
+
+    toggleHeartButtons.forEach(button => {
+        const heartIcon = button.querySelector(".hearticon");
+        let isFilled = false;
+
+        button.addEventListener("click", function() {
+            if (isFilled) {
+                heartIcon.src = "img/empty_heart.png";
+                heartIcon.alt = "Empty Heart";
+            } else {
+                heartIcon.src = "img/filled_heart.png";
+                heartIcon.alt = "Filled Heart";
+            }
+            isFilled = !isFilled;
+        });
+    });
+});
