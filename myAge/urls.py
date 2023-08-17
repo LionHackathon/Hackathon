@@ -20,9 +20,8 @@ from user import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signin/', views.signin_view, name='signin_view'),
     path('question/',include('question.urls')),
-    path('user/',include('user.urls')),
     path('answer/',include('answer.urls')),
-    path('comment/',include('comment.urls')),
+    path('comment/',include('comment.urls')), 
+    path('user/', include('user.urls')),
 ]
