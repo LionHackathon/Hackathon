@@ -59,7 +59,7 @@ class KakaoLoginView(APIView):
         '''
         client_id = settings.KAKAO_CONFIG['KAKAO_REST_API_KEY']
         redirect_uri = settings.KAKAO_CONFIG['KAKAO_REDIRECT_URI']
-        kakao_login_uri = settings.kakao_login_uri
+        kakao_login_uri = settings.KAKAO_CONFIG['kakao_login_uri']
 
         uri = f"{kakao_login_uri}?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code"
         

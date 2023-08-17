@@ -18,11 +18,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 KAKAO_CONFIG = {
     "KAKAO_REST_API_KEY": "13a58c6fbea2c6356d88b27c19a652a5",
     "KAKAO_REDIRECT_URI": "http://localhost:8000/oauth/kakao/login/callback/",
-    "KAKAO_CLIENT_SECRET_KEY": "rYzcmi780uF7lxugXzxz5YJsDBr2PGNq"
+    "KAKAO_CLIENT_SECRET_KEY": "rYzcmi780uF7lxugXzxz5YJsDBr2PGNq",
+    "kakao_login_uri": "https://kauth.kakao.com/oauth/authorize",
+    "kakao_token_uri": "https://kauth.kakao.com/oauth/token",
+    "kakao_profile_uri": "https://kapi.kakao.com/v2/user/me"
 }
-kakao_login_uri = "https://kauth.kakao.com/oauth/authorize"
-kakao_token_uri = "https://kauth.kakao.com/oauth/token"
-kakao_profile_uri = "https://kapi.kakao.com/v2/user/me"
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
