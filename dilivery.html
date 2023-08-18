@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/search.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>내나이가어때서</title>
+</head>
+
+<body>
+    <div class="container">
+        <section id="search_page">
+            <h1 class="mt-5 mb-5 result"> 검색결과 </h1> 
+            <div class="input-group mb-5 search_result">
+                <div class="dropdown">
+                    <input type="text" id="searchinput" class="form-control" placeholder="검색어 입력" aria-label="Recipient's username" aria-describedby="button-addon2" oninput="updateSearchResults()">
+                    <div class="dropdown-content" id="searchResults"></div>
+                </div>
+                <button onclick="navigateToPage()" type="button" class="btn btn-primary"><i class="fas fa-search"></i> </button>
+            </div>
+            <div id="searchresults"></div>
+
+            <a href="app.html"><button type="button" class="btn btn-outline-primary mt-2 mb-5 top_ten"><P class="mt-2">배달의민족 어플 설치하러가기 (클릭)</P></button></a>
+            <div class="youtube">
+                <div class="dilivery">
+                    <h2 class="mb-3">배달의 민족 회원가입</h2>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=oIuCSbn8w5g">
+                            <img src="https://img.youtube.com/vi/oIuCSbn8w5g/0.jpg" alt="회원가입">
+                        </a>
+                        <button class="toggleheart"><img class="hearticon" src="img/empty_heart.png" alt="Empty Heart"></button>
+                    </div>
+                </div>
+                <div class="dilivery">
+                    <h2 class="mt-5 mb-3">회원가입부터 음식 주문까지</h2>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=QTZSxjn-TVE">
+                            <img src="https://img.youtube.com/vi/QTZSxjn-TVE/0.jpg" alt="회원가입">
+                        </a>
+                        <button class="toggleheart"><img class="hearticon" src="img/empty_heart.png" alt="Empty Heart"></button>
+                    </div>
+                </div>
+                <div class="dilivery_last">
+                    <h2 class="mt-5 mb-3">배민페이&배민 B마트</h2>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=GTyVBYotxSM">
+                            <img src="https://img.youtube.com/vi/GTyVBYotxSM/0.jpg" alt="회원가입">
+                        </a>
+                        <button class="toggleheart"><img class="hearticon" src="img/empty_heart.png" alt="Empty Heart"></button>
+                    </div>
+                    
+                </div>
+                <div class="bottom-bar">
+                    <a href="index.html"><i class="fas fa-home "></i></a>
+                </div>
+        </section>
+    </div>
+    <script src="./js/search.js"></script>
+</body>
+</html>

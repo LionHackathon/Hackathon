@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#login{
+    text-align: center;
+    padding : 50px;
+    
+}
+.centered-text {
+    font-family: 'Cafe24Ssurround';
+    font-size: 24px;
+    text-align: center;
+    color :#000000;
+}
+
+.w-btn-black{
+    background-color: #000000;
+    color: #ffffff;
+    width: 311px;
+    height: 54px;
+    flex-shrink: 0;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.w-btn-yellow{
+    background-color: #FFEE50;
+    color: #5b500b;
+    width: 311px;
+    height: 54px;
+    flex-shrink: 0;
+}
+
+.custom-button.clicked {
+    background-color: #FFC107;
+    color: #FFF;
+}

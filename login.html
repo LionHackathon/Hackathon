@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body style= "background-color : whitesmoke">
+    
+    <div class = "container">
+        <section id = "login">
+            <img src = "C:\Users\82104\Desktop\Hackathon_front\bi_person-circle.png" alt = "회원 사진">
+            <p class="centered-text" > 로그인 </p>
+
+            <input type="text" id="username" placeholder="아이디" style = " width: 311px;
+            height: 52px;
+            font-family: 'Cafe24Ssurround';
+            font-size : 20px;
+            background-color: whitesmoke;"></input>
+
+            <br> <br>
+
+            <input type="text" id="password" placeholder="비밀번호" style = "width: 311px;
+            height: 52px;
+            font-family: 'Cafe24Ssurround';
+            font-size : 20px;
+            background-color: whitesmoke;"> </input>
+
+            <br> <br>
+            
+
+            <input type="checkbox" id="remember" name="remember" value="remember" style = "width: 14px;
+            height: 14px;
+            flex-shrink: 0; border: 1px solid #000;"
+            >
+            
+            <label for="remember" style = "font-family: 'Cafe24Ssurround';
+            font-size : 14px;"> 로그인 상태유지 </label>
+           
+            <br> <br>
+
+            <button class="w-btn w-btn-black" type="button" id="loginButton">로그인</button>
+            <br> <br>
+            <button class="w-btn w-btn-yellow" type="button" id="kakaoLoginButton"><img src="C:\Users\82104\Desktop\Hackathon_front\image 31.png" alt="카카오톡 로고" style = "width : 20px; height : 20px;">
+                카카오톡으로 로그인</button>
+
+            <br><br><br>
+
+            <button class="w-btn w-btn-indigo" type="button">회원가입</button>
+
+        </section>
+    </div>
+
+      
+
+<script src="./js/login.js"></script>
+</body>
+</html>

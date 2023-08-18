@@ -1,1 +1,58 @@
-<h1>question페이지입니다</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/question.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+    crossorigin="anonymous">
+    
+
+</head>
+<body>
+    
+    </style>
+    
+    <br>
+    <br>
+
+    <div class="header">
+        <p>질문게시판</p>
+    </div>
+
+    <div class="nav">
+        <img src="../../static/img/faq.jpg" style="width:200px;height: 200px;">
+    </div>
+
+    <br><br>
+
+    <div id="black">
+        <div class="box">질문1</div>
+        <div class="box">질문2</div>
+        <div class="box">질문3</div>
+        <div class="box">질문4</div>
+        <div class="box">질문5</div>
+        <div class="box">질문6</div>
+        <div class="box">질문7</div>
+        <div class="box">질문8</div>
+    </div>
+    <br>
+
+    <div class="container">
+      <div class="write-button">
+        <button onclick="location.href='{% url 'question_write' %}'">글쓰기</button>      </div>
+    </div>
+
+    <br><br><br>
+
+    <div id="footer">
+      <a href="다른페이지의url">
+        <img src="../../static/img/home.jpg" style="width:48px;height:48px;">
+      </a>
+    </div>
+    <button id="getDataButton">Get Data</button>
+    <p id="responseMessage"></p>
+    <script src="../../static/js/writecomplete.js"></script></body>
+</html>

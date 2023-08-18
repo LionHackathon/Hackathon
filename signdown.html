@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>(서비스 명) 회원가입</title> 
+<link rel = "icon" href="image/wave.ico">
+ <link rel=stylesheet href="./css/signdown.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<section id="signdown">
+   <div id="wrap" class="wrapper">
+      <form method ="post" name="join" id="join">
+        <!-- 회원가입 타이틀부분 -->
+         <header>
+            <div id="header">
+               <h1 class="h_loho">
+                  <span><img alt="이미지" src="./img/signup.png"></span>
+                  <p>(서비스명) 회원가입</p>
+               </h1>
+               </div>
+         </header>
+
+         <div id="container">
+            <div class="row_group">
+               <div class="userInput">
+        <!-- 아이디 입력 -->
+                  <h3 class="list mb-2">아이디<span id="idError"></span></h3>
+                  <span class="box int_id" ><input type="text" id="id" class="int check"
+                     maxlength="20"></span>
+               </div>
+               <div class="userInput">
+        <!-- 비밀번호 입력 -->
+                  <h3 class="list mb-2 mt-5">비밀번호<span id="pwError"></span></h3>
+                  <span class="box int_id"><input type="password" id="pw" class="int check"
+                     maxlength="20"></span>
+               </div>
+        <!-- 비밀번호 재확인 입력 -->
+               <div class="userInput">
+                  <h3 class="list mb-2 mt-5">비밀번호 재확인<span id="pwCheckError"></span></h3>
+                  <span class="box int_id"><input type="password" id="pwCheck" class="int check" 
+                     maxlength="20"></span>
+               </div>
+            </div>
+               <div class="row_group">
+        <!-- 이름 입력 -->
+               <div class="userInput">
+                  <h3 class="list mb-2 mt-5">이름<span id="nameError"></span></h3>
+                  <span class="box int_id"><input type="text" id="name" class="int check"
+                     maxlength="20"></span>
+               </div>
+      <!-- 이메일 입력 -->
+      <div class="userInput mt-5 mb-5">
+        <h3 class="list">이메일<span id="emailError"></span></h3>
+        <span class="emailInt" id="emailBox"> <input type="text" id="email" maxlength="20" class="check" > 
+           <span>   @ </span> 
+              <!-- 이메일 옵션 -->
+              <select id="mail_Select">
+                 <option>이메일 선택</option>
+                 <option>naver.com</option>
+                 <option>gmail.com</option>
+                 <option>daum.net</option>
+                 <option>hanmail.net</option>
+                 <option>hotmail.com</option>
+                 <option>nate.com</option>
+                 <option>yahoo.co.kr</option>
+                 <option>empas.com</option>
+                 <option>freechal.com</option>
+                 <option>lycos.co.kr</option>
+                 <option>korea.com</option>
+                 <option>hanmir.com</option>
+                 <option>dreamwiz.com</option>
+                 <option>paran.com</option>
+              </select>
+        </span>
+     </div>
+   </section>
+<script src="./js/signdown.js"></script> 
+</body>
+</html>
