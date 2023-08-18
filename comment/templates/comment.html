@@ -1,1 +1,14 @@
-<h1>comment페이지입니다</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add Comment</h2>
+  <form method="post" action="{% url 'Hackathon:add_comment' %}">
+    {% csrf_token %}
+    <input type="hidden" name="question_id" value="{{ question_id }}">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required><br>
+    <label for="reply">Reply:</label>
+    <textarea name="reply" rows="4" required></textarea><br>
+    <button type="submit">Add Comment</button>
+  </form>
+{% endblock %}
