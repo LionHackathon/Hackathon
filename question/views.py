@@ -50,3 +50,9 @@ def get_question_detail_as_json(request, question_id):
         'createdDate': question.createdDate.strftime('%Y-%m-%d %H:%M:%S'),  # 날짜 포맷 지정
     }
     return JsonResponse(question_data)
+
+def home(request):
+    return render(request, 'question.html')
+
+def question_write(request):
+    return render(request, 'write.html')

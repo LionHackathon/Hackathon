@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#login{
+    
+    padding : 50px;
+    
+}
+
+
+
+
+.centered-text {
+    font-family: 'Cafe24Ssurround';
+    font-size: 40px;
+    text-align: center;
+    color :#000000;
+}
+
+.w-btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    width: 600px;
+    height: 200px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.w-btn-white-outline {
+    border: 3px solid #ffffff;
+    color: #000000;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.line{
+    width: 1080px;
+    margin: auto;
+    display: grid;
+
+}
+.temp-box {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+  }
+
+.space {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+  }
+
+

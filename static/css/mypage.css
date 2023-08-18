@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.nav {
+    text-align: center;
+
+}
+
+.box1 {
+    border: 3px solid #4477CE;
+    margin: 12px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cafe24Ssurround';
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+
+
+  
+.box2 {
+    border: 3px solid #4477CE;
+    margin: 12px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cafe24Ssurround';
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+        
+    
+.box3 {
+    border: 3px solid #4477CE;
+    margin: 12px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cafe24Ssurround';
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+        
+.box4 {
+    border: 3px solid #4477CE;
+    margin: 12px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cafe24Ssurround';
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+
+#black {
+    border-style: solid;
+    border-color: #D8D9DA;
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #D8D9DA;
+}
+
+p {
+    font-family: 'Cafe24Ssurround';
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.button {
+    height: 60px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: black;
+    border: none;
+    color:white;
+    font-size: 45px;
+    font-weight: 600;
+    width: 10%;
+    transition: transform 0.3s;
+}
+
+.button:active {
+    transform: scale(1.1); /* 클릭 시 살짝 커지는 효과 */
+}
+
+.name {
+    text-decoration: underline;
+    font-family: 'Cafe24Ssurround';
+}
+
+.container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.point {
+    margin-left: 10px;
+    font-family: 'Cafe24Ssurround';
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer img {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#footer img:hover {
+    transform: scale(1.1);
+}

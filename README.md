@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 기본적인 사용방법
 
 1.본인이 작업할 폴더에 git cloning 해주세요. <br>
@@ -19,3 +20,4 @@ git push <br>
 
 commit 관련 Reference <br>
 https://jane-aeiou.tistory.com/93
+

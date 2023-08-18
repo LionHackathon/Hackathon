@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/write.css">
+</head>
+<body>
+    <br><br><br>
+    <div class="header">
+        <p>문의</p>
+    </div>
+
+    <div class="nav">
+        <h4>서비스에 대한 문의사항을 남겨주세요.</h4>
+    </div>
+
+    <br>
+
+    <div class="container">
+       <div class="name">
+        이름
+       </div>
+    <br>
+        <input type="text" class="name-input" placeholder="보내시는 분의 이름을 입력하세요.">
+    <br>
+    <br>
+    <br>
+        <div class="message">
+        메세지
+        </div>
+    <br>
+        <input type="text" class="message-input" placeholder="내용을 남겨주세요.">
+
+    </div>
+    <br>
+
+    <div class="button-container">
+        <button class="cancel-button" onclick="location.href='question.html'"><span class="button-text">작성취소</span></button>
+        <button class="submit-button"><span class="button-text">작성완료</span></button>
+        <div id="data-container"></div>
+    </div>
+
+    <br><br><br>
+    <script src="js/writecomplete.js"></script>
+    </body>
+</html>

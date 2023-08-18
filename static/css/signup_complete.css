@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "Cafe24Ssurround", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-purple {
+    background-color: #D2D8FB;
+    color: #000000;
+}
+
+.w-btn-purple-outline {
+    border: 3px solid #D2D8FB;
+    color: #000000;
+}
+
+.w-btn-purple-outline:hover {
+    background-color: #D2D8FB;
+    color: #6e6e6e;
+}
+.w-btn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn-outline:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn:active {
+    transform: scale(1.5);
+}
+
+.w-btn-outline:active {
+    transform: scale(1.5);
+}
+
+#signup0{
+    text-align: center;
+    padding : 70px;
+    
+}
+
+
+
+.centered-text {
+    font-family: 'Cafe24Ssurround';
+    font-size: 24px;
+    text-align: center;
+    color :#000000;
+}
+
+
+.centered-text2 {
+    font-family: 'Cafe24Ssurround';
+    font-size: 60px;
+    text-align: center;
+    color :#000000;
+}
+
