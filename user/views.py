@@ -21,11 +21,14 @@ def signup_view(request):
     try:
         if request.method == 'POST':
             data = json.loads(request.body)
-            user_id = data.get('userId')
+            username = data.get('username')
+            email = data.get('email')
             password = data.get('password')
-            role = data.get('role')
+            nickname = data.get('nickname')
 
-            user = User.objects.create_user(username=user_id, password=password, role=role)
+            default_role = "user"
+
+            user = User.objects.create_user(username=username, email=email, password=password, nickname=nickname)
             user.save()
 
             response_data = {'message': 'Signup successful'}
@@ -40,10 +43,10 @@ def signup_view(request):
 def signin_view(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        user_id = data.get('userId')
+        username = data.get('username')
         password = data.get('password')
 
-        user = authenticate(request, username=user_id, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return JsonResponse({'message': 'Signin successful'})
@@ -99,12 +102,13 @@ class KakaoCallbackView(APIView):
             return Response({"message": "Failed to get user info from Kakao."}, status=400)
 
         # 사용자 정보로 로그인 또는 회원가입 처리
+        user_nickname = user_info['properties'].get('nickname')
         user_email = user_info['kakao_account'].get('email')
         try:
             user = User.objects.get(email=user_email)
             login(request, user)
         except User.DoesNotExist:
-            user = User.objects.create_user(username=user_email, email=user_email)
+            user = User.objects.create_user(username=user_nickname, email=user_email)
             user.save()
             login(request, user)
 
